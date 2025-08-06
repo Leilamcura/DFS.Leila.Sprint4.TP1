@@ -1,0 +1,66 @@
+<!-- Requerimiento: Crear la vista principal del dashboard (views/dashboard.ejs): 
+Mostrar la lista de superhéroes utilizando el endpoint /heroes. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard de Superhéroes</title>
+  
+  
+</head>
+<body>
+   <h1>Listado de Superhéroes</h1>
+  <!-- <div class="centrar-boton">
+        <button type="button" onclick="window.location.href='/api/formAgregarHeroe'"> Nuevo Superhéroe </button>
+  </div> -->
+  <ul class="tarjetas">
+  <% superheroes.forEach(superheroe => { %>
+    <li class="card">
+      <h2><%= superheroe.nombreSuperHeroe %></h2>
+      <p><strong>Nombre real:</strong> <%= superheroe.nombreReal %></p>
+      <p><strong>Edad:</strong> <%= superheroe.edad %> años</p>
+      <p><strong>Planeta:</strong> <%= superheroe.planetaOrigen %></p>
+      <p><strong>Debilidad:</strong> <%= superheroe.debilidad || 'No registrada' %></p>
+      <p><strong>Poderes:</strong> <%= superheroe.poderes.length > 0 ? superheroe.poderes.join(', ') : 'Sin poderes definidos' %></p>
+      <p><strong>Aliados:</strong> <%= superheroe.aliados.length > 0 ? superheroe.aliados.join(', ') : 'Sin aliados' %></p>
+      <p><strong>Enemigos:</strong> <%= superheroe.enemigos.length > 0 ? superheroe.enemigos.join(', ') : 'Sin enemigos conocidos' %></p>
+      <p><strong>Creador:</strong> <%= superheroe.creador || 'Desconocido' %></p>
+      <p><strong>Registrado en:</strong> <%= new Date(superheroe.createdAT).toLocaleDateString() %></p>
+
+      <div class="acciones">
+        <button type="button" onclick="window.location.href='/api/formEditarHeroe/<%= superheroe._id %>'">Editar</button>
+        <form action="/api/heroes/eliminar/<%= superheroe._id %>?_method=DELETE" method="POST" style="display:inline;" onsubmit="return confirm('¿Confirma la eliminación de <%= superheroe.nombreSuperHeroe %>?');">
+          <button type="submit" class="delete-btn">Eliminar</button>
+        </form>
+      </div>
+    </li>
+  <% }) %>
+</ul>
+  <!-- <ul>
+    <% superheroes.forEach(superheroe => { %>
+      <li>
+        <h2><%= superheroe.nombreSuperHeroe %></h2>
+        <p><strong>Nombre real:</strong> <%= superheroe.nombreReal %></p>
+        <p><strong>Edad:</strong> <%= superheroe.edad %> años</p>
+        <p><strong>Planeta:</strong> <%= superheroe.planetaOrigen %></p>
+        <p><strong>Debilidad:</strong> <%= superheroe.debilidad || 'No registrada' %></p>
+        <p><strong>Poderes:</strong> <%= superheroe.poderes.length > 0 ? superheroe.poderes.join(', ') : 'Sin poderes definidos' %></p>
+        <p><strong>Aliados:</strong> <%= superheroe.aliados.length > 0 ? superheroe.aliados.join(', ') : 'Sin aliados' %></p>
+        <p><strong>Enemigos:</strong> <%= superheroe.enemigos.length > 0 ? superheroe.enemigos.join(', ') : 'Sin enemigos conocidos' %></p>
+        <p><strong>Creador:</strong> <%= superheroe.creador || 'Desconocido' %></p>
+        <p><strong>Registrado en:</strong> <%= new Date(superheroe.createdAT).toLocaleDateString() %></p>
+
+        
+        <div class="acciones">
+          <button type="button" onclick="window.location.href='/api/formEditarHeroe/<%= superheroe._id %>'"> Editar </button>
+          <form action="/api/heroes/eliminar/<%= superheroe._id %>?_method=DELETE" method="POST" style="display:inline;" onsubmit="return confirm('¿Seguro que querés borrar a <%= superheroe.nombreSuperHeroe %>?');">
+            <button type="submit" class="delete-btn"> Eliminar </button>
+          </form>
+        </div>
+
+      </li>
+    <% }) %>
+  </ul> -->
+</body>
+</html>

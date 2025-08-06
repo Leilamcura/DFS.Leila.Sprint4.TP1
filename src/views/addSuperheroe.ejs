@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Agregar Superhéroe</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Agregar Nuevo Superhéroe</h1>
+    <div class="form-container">
+        <form method="POST" action="/api/heroes/agregar">
+
+            <div class="col-md-6 form-group mb-3">
+                <label>Nombre del Superhéroe:</label>
+                <input type="text" name="nombreSuperHeroe" required minlength="3" maxlength="60" pattern="\S(.*\S)?"
+                    title="Debe tener entre 3 y 60 caracteres, sin espacios al inicio o fin" />
+            </div>
+
+            <div class="col-md-6 form-group mb-3">
+            <label>Nombre Real:</label>
+            <input type="text" name="nombreReal" required minlength="3" maxlength="60" pattern="\S(.*\S)?"
+                title="Debe tener entre 3 y 60 caracteres sin espacios al inicio o fin" />
+            </div>
+
+            <div class="col-md-6 form-group mb-3">
+            <label>Edad:</label>
+            <input type="number" name="edad" required min="0" inputmode="numeric" step="1" pattern="\d+"
+                title="Ingrese un número entero mayor o igual a 0" />
+            </div>
+
+            <div class="col-md-6 form-group mb-3">
+            <label>Planeta de Origen:</label>
+            <input type="text" name="planetaOrigen" required minlength="3" maxlength="60" pattern="\S(.*\S)?"
+                title="Debe tener entre 3 y 60 caracteres sin espacios al inicio o fin" />
+            </div>
+
+            <div class="col-md-6 form-group mb-3">
+            <label>Debilidad:</label>
+            <input type="text" name="debilidad" required minlength="3" maxlength="60" pattern="\S(.*\S)?"
+                title="Debe tener entre 3 y 60 caracteres sin espacios al inicio o fin" />
+            </div>
+
+            <div class="col-md-6 form-group mb-3">
+            <label>Poderes (separados por comas):</label>
+            <input type="text" name="poderes" required pattern="(\s*\S.{2,58}\S\s*)(\s*,\s*\S.{2,58}\S\s*)*"
+                title="Ingrese al menos un poder. Cada poder debe tener entre 3 y 60 caracteres, sin espacios al inicio ni al final, separados por comas" />
+            </div>
+
+            <div class="col-md-6 form-group mb-3">
+            <label>Aliados (separados por comas):</label>
+            <input type="text" name="aliados" required pattern=".{3,}" title="Cada aliado debe tener mínimo 3 caracteres" />
+            </div>
+
+            <div class="col-md-6 form-group mb-3">
+            <label>Enemigos (separados por comas):</label>
+            <input type="text" name="enemigos" required pattern=".{3,}" title="Cada enemigo debe tener mínimo 3 caracteres" />
+            </div>
+
+            <div class="col-md-6 form-group mb-3">
+            <label>Creador:</label>
+            <input type="text" name="creador" required maxlength="60" />
+            </div>
+            
+            
+                <button type="submit">Guardar Superhéroe</button>
+      
+         </form>
+    </div>
+</body>
+</html>

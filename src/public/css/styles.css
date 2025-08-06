@@ -1,0 +1,335 @@
+/* body {
+  margin: 0;
+  padding: 0;
+  background-color: #FFF9F0; /* fondo general 
+  font-family: 'Quicksand', sans-serif;
+  color: #333;
+  /* height: 100vh;
+  
+} */
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+
+
+main {
+  margin-top: 90px;
+  flex: 1;
+  padding: 2rem;
+  background-color: #fef6e4;
+  background-image: url('/images/fondosuperheroes.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+
+h1 {
+  text-align: center;
+}
+
+.tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 20px;
+  list-style: none;
+  justify-content: center;
+}
+
+.card {
+  background-color: #FFE66D; /* amarillo pastel intenso */
+  border: 2px solid #FFA552; /* borde naranja vibrante */
+  border-radius: 14px;
+  padding: 20px;
+  width: 320px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease;
+}
+
+.card:hover {
+  transform: scale(1.04);
+}
+
+.card h2 {
+  margin-top: 0;
+  color: #CC5500; /* naranja intenso */
+}
+
+.card p {
+  margin: 8px 0;
+  color: #444;
+}
+
+.acciones {
+  margin-top: 16px;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+/* Botón editar – verde pastel vibrante */
+.acciones button[type="button"] {
+  background-color: #A3D9A5;
+  color: #1e8048;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.acciones button[type="button"]:hover {
+  background-color: #91C89B;
+}
+
+/* Botón eliminar – naranja pastel vibrante */
+.acciones .delete-btn {
+  background-color: #ca7b31;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.acciones .delete-btn:hover {
+  background-color: #FF8A3D;
+}
+
+/* Contenedor de botones al final */
+.acciones {
+  margin-top: auto;
+  display: flex;
+  gap: 8px; /* reducido para que queden más juntos */
+  justify-content: flex-end;
+  padding-top: 12px;
+}
+
+.form-container {
+  background-color: rgb(255, 230, 109); 
+  border: 2px solid #FFA552; 
+  border-radius: 14px;
+  padding: 20px;
+  width:50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease;
+  margin: 20px auto;
+}
+
+ form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 2rem;
+  max-width: 800px;
+  width: 100%;
+  text-align: left;
+}
+
+label {
+  font-weight: bold;
+  grid-column: span 2; /* hace que cada label ocupe las dos columnas */
+}
+
+input {
+  grid-column: span 2;
+  width: 90%;     /* ancho fijo */
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #d0d0d0;
+  border-radius: 0.5rem;
+  background-color: #f9f6ff;   
+  color: #333;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+  border: 2px solid #1fdd68;
+  outline: none;
+}
+
+button {
+  grid-column: span 2;
+  margin-top: 1rem;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  background-color: #cc451c;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #FFA552;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+
+.centrar-boton {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+
+.navbar {  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #1c303a; 
+  padding: 1rem;
+  text-align: center;
+  z-index: 1000;
+}
+
+
+.navbar .logo {
+    width: 100px;
+    margin-right: 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.navbar ul li a img {
+    width: 20px;
+}
+
+
+footer {
+  background-color: #151515;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+}
+
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0.5rem 0;
+}
+
+.social-icons a img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px; 
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.social-icons a:hover img {
+  transform: scale(1.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.about-section {
+  width: 80%;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.9); 
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+/* centrar el texto */
+.about-section h1,
+.about-section h2,
+.about-section p {
+  text-align: center;
+}
+
+/* Parrafo */
+.about-section p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.contact-container {
+  max-width: 700px;
+  margin: 5vh auto;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.9); 
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos */
+.contact-container h2,
+.contact-container h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* Formulario minimalista */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  border: none;
+  border-bottom: 1px solid #aaa;
+  background-color: transparent;
+  padding: 0.75rem;
+  font-size: 1rem;
+  color: #333;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-bottom: 1px solid #6c63ff;
+}
+
+/* 📱 Responsive */
+@media screen and (max-width: 768px) {
+  .contact-container {
+    margin: 2vh 1rem;
+    padding: 1.5rem;
+  }
+}
+
+
