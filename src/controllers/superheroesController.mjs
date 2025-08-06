@@ -38,9 +38,6 @@ export async function obtenerSuperheroePorIdController(req, res) {
 // Obtiene todos los superheroes y los renderiza en el dashboard. Requerimiento de Sprint3 TP3.
 export async function obtenerTodosLosSuperheroesController(req, res) {
   try {
-    // const superheroes = await obtenerTodosLosSuperheroes();
-    // const superheroesFormateados = renderizarListasSuperheroes(superheroes);
-    // res.status(200).json(superheroesFormateados);
        const superheroes =await obtenerTodosLosSuperheroes();
        res.render('dashboard', { title: 'Dashboard de Superhéroes', superheroes }); // renderizado EJS
 
