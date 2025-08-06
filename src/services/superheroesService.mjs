@@ -33,15 +33,6 @@ export async function buscarSuperheroesPorAtributo(atributo, valor) {
     }
 }
 
-// Buscar superheroes mayores de 30 del planeta tierra con al menos 2 poderes
-export async function obtenerSuperheroesMayoresDe30() {
-    try {
-        return await superHeroRepository.obtenerMayoresDe30ConCriterios();
-    } catch (error) {
-        console.error("Ocurrió un error al obtenerSuperheroesMayoresDe30:", error);
-        throw error;
-    }
-}
 
 // Crear Superheroe
 export async function crearSuperheroeService(datos) {
@@ -74,16 +65,7 @@ export async function eliminarSuperheroePorIdService(id) {
     }
 }
 
-// Eliminar por nombre 
 
-export async function eliminarSuperheroePorNombreService(nombreSuperheroe) {
-    try {
-        return await superHeroRepository.eliminarSuperheroePorNombre(nombreSuperheroe);
-    } catch (error) {
-        console.error("Ocurrió un error al eliminarSuperheroePorNombreService:", error);
-        throw error;
-    }
-}
 
 // Agregar superheroe service
 export async function agregarSuperheroeService(datos) {

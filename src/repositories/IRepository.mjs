@@ -10,9 +10,7 @@ class IRepository {
     buscarPorAtributo(atributo, valor) {
         throw new Error ("Método 'buscarPorAtributo()' no implementado");
     }
-    obtenerMayoresDe30(){
-        throw new Error ("Método 'obtenerMayoresDe30()' no implementado");
-    }
+   
     crearSuperheroe() {
         throw new Error("Método 'crearSuperheroe()' no implementado");
     }
@@ -22,9 +20,7 @@ class IRepository {
     eliminarPorId() {
          throw new Error("Método 'eliminarPorId()' no implementado");
     }
-    eliminarPorNombre() {
-         throw new Error("Método 'eliminarPorNombre()' no implementado");
-    }
+
 }
 
 export default IRepository;

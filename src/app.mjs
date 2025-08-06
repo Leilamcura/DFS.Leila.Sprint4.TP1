@@ -31,15 +31,7 @@ app.use(express.json());
 // Conexion mongodb
 connectDB();
 
-// // Motor de vistas EJS
-// app.set('view engine', 'ejs');
-// app.set('views', path.resolve('./views'));
-
-// //Configurar express-ejs-layouts
-// app.use(expressLayouts);
-// app.set('layout', 'layout'); // archivo base de layout
-
-// Configuración de EJS y layouts
+// Configuración del Motor de vistas EJS y el middleware layouts
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(expressLayouts);
@@ -69,12 +61,6 @@ app.use((req, res) => {
     res.status(404).send({ mensaje: 'Ruta no encontrada'});
 });
 
-
-
-// // Iniciar el servidor
-// app.listen(PORT, () => {
-//     console.log(`Servidor escuchado en el puerto ${PORT}`);
-// });
 
 // Iniciar servidor
 app.listen(PORT, '0.0.0.0', () => {

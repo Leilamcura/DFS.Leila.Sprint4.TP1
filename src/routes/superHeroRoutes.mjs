@@ -6,14 +6,10 @@ import {
     obtenerSuperheroePorIdController,
     obtenerTodosLosSuperheroesController,
     buscarSuperheroesPorAtributoController,
-    obtenerSuperheroesMayoresDe30Controller,
-    //crearSuperheroeController,
     editarSuperheroeController,
     eliminarSuperheroePorIdController,
-    eliminarSuperheroePorNombreController,
     agregarSuperheroeController,
     formActualizarHeroeController,
-    //actualizarSuperheroeController
 } from '../controllers/superheroesController.mjs';
 
 // Para cumplir con los requerimientos del Sprint3 TP2 validar y sanitizar
@@ -22,15 +18,10 @@ import { heroesHandleValidationErrors } from "../middlewares/errorMiddleware.mjs
 
 const router = express.Router();
 
-router.get('/heroes/mayores-30', obtenerSuperheroesMayoresDe30Controller); 
 router.get('/heroes/:id', obtenerSuperheroePorIdController); 
 router.get('/heroes/buscar/:atributo/:valor', buscarSuperheroesPorAtributoController);  
 router.get('/heroes', obtenerTodosLosSuperheroesController);
 
-// Agregado de middlewares de validacion y manejo de errores solicitados en Trello para Sp3TP2
-// pausado router.post('/heroes/', heroesValidationRules(), heroesHandleValidationErrors, crearSuperheroeController);
-// pausado router.put('/heroes/editar/:nombreSuperheroe', heroesValidationRules(), heroesHandleValidationErrors, editarSuperheroeController);
-// --
 
 // Agregado de requerimiento Sprint3 TP3: Definir una ruta POST /heroes/agregar en superheroesRoutes.mjs.
 router.post('/heroes/agregar', heroesValidationRules(), heroesHandleValidationErrors, agregarSuperheroeController)
@@ -40,27 +31,12 @@ router.get('/formEditarHeroe/:id', formActualizarHeroeController); //busca y car
 router.put('/heroes/actualizar/:id', heroesValidationRules(), heroesHandleValidationErrors, editarSuperheroeController);
 
 // Agregado de requerimiento Sprint3 TP3: Formularios
-// Agregar
+// Agregar Heroe
 router.get('/formAgregarHeroe', (req, res) => {
     res.render('addSuperheroe', { title: 'Agregar Superheroe' }); 
 });
 
-
-// Editar
-// router.get('/formulario-editar', (req, res) => {
-//     res.render('editSuperheroe'); 
-// });
-
-
-// router.get("/form-agregar-heroe", (req, res) => {
-//   res.render("addSuperheroe")
-// })
-//router.get('/formAgregarHero',formAgregarHeroController);
-// router.get('/formEditarHero/:id',formActualizarHeroeController);
-// router.get('/confirmarEliminar/:id', confirmarEliminacionController);
-
 router.delete('/heroes/eliminar/:id', eliminarSuperheroePorIdController);
-router.delete('/heroes/eliminar-nombre/:nombreSuperheroe', eliminarSuperheroePorNombreController);
 
 export default router;
 

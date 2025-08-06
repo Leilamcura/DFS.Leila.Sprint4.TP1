@@ -5,11 +5,9 @@ import {
   obtenerSuperheroePorId,
   obtenerTodosLosSuperheroes,
   buscarSuperheroesPorAtributo,
-  obtenerSuperheroesMayoresDe30,
   crearSuperheroeService,
   editarSuperheroeService,
   eliminarSuperheroePorIdService,
-  eliminarSuperheroePorNombreService,
 } from "../services/superheroesService.mjs";
 
 import {
@@ -75,25 +73,6 @@ export async function buscarSuperheroesPorAtributoController(req, res) {
   }
 }
 
-export async function obtenerSuperheroesMayoresDe30Controller(req, res) {
-  try {
-    const superheroes = await obtenerSuperheroesMayoresDe30();
-    if (superheroes.length === 0) {
-      return res
-        .status(404)
-        .send({ mensaje: "No se encontraron superheroes mayores de 30 años" });
-    }
-    const superheroesFormateados = renderizarListasSuperheroes(superheroes);
-    res.status(200).json(superheroesFormateados);
-  } catch (error) {
-    res
-      .status(500)
-      .send({
-        mensaje: "Error al obtener superheroes mayores de 30",
-        error: error.message,
-      });
-  }
-}
 
 // Crear Superheroe
 
@@ -116,40 +95,7 @@ export async function crearSuperheroeController(req, res) {
   }
 }
 
-// Editar/actualizar superheroe
 
-// export async function editarSuperheroeController(req, res) {
-//   try {
-//     // const { nombreSuperheroe } = req.params;
-//     const { id } = req.params;
-//     const datos = req.body;
-//     console.log(
-//       "Estoy en la capa del controlador, en la funcion editarSuperheroeController y llegó esta informacion: ",
-//       datos
-//     );
-//     const superheroe = await editarSuperheroeService(id, datos);
-//     if (superheroe) {
-//       res.send(renderizarSuperheroe(superheroe));
-//     } else {
-//       res.status(400).send({ mensaje: "No se pudo editar el superhéroe" });
-//     }
-//   } catch (error) {
-//     console.error("Error en editarSuperheroeController:", error);
-//     res.status(500).send({ mensaje: "Error interno del servidor" });
-//   }
-// }
-// OTRO:
-// export async function actualizarSuperheroeController(req, res) {
-//     try {
-//     const {id}= req.params;
-//     const nuevosDatos= req.body;
-//     const superheroeActualizado = await actualizarSuperheroe(id,nuevosDatos);
-//    res.redirect('http://localhost:3000/api/dashboard');
- 
-//     } catch (error) {
-//         res.status(500).send({mensaje:'Superheroe con ID incorrecto o inexistente'}); 
-//     }
-// }
 export async function editarSuperheroeController(req, res) {
     try {
         const { id } = req.params;
@@ -192,26 +138,7 @@ export async function eliminarSuperheroePorIdController(req, res) {
   }
 }
 
-// Eliminar Superheroe por nombre
 
-export async function eliminarSuperheroePorNombreController(req, res) {
-  try {
-    const { nombreSuperheroe } = req.params;
-    const superheroe = await eliminarSuperheroePorNombreService(
-      nombreSuperheroe
-    );
-    if (superheroe) {
-      res.send(renderizarSuperheroe(superheroe));
-    } else {
-      res
-        .status(400)
-        .send({ mensaje: "No se pudo eliminar el superhéroe por nombre" });
-    }
-  } catch (error) {
-    console.error("Error en eliminarSuperheroePorNombreController:", error);
-    res.status(500).send({ mensaje: "Error interno del servidor" });
-  }
-}
 
 // agregarSuperheroeController
 
