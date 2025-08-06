@@ -222,13 +222,13 @@ export async function eliminarSuperheroePorNombreController(req, res) {
          if (superheroe) {
             //  res.send(renderizarSuperheroe(superheroe));
             const superheroes =await obtenerTodosLosSuperheroes();
-            res.render('dashboard', { superheroes }); // renderizado EJS
+            res.render('dashboard', { title: 'Agregar Superhéroe', superheroes }); // renderizado EJS
          } else {
              res.status(400).send({ mensaje: "No se pudo crear el superhéroe" });
          }
      } catch (error) {
          console.error("Error en agregarSuperheroeController:", error);
-         res.status(500).send({ mensaje: "Error interno del servidor" });
+         res.status(500).send({  mensaje: "Error interno del servidor" });
      }
  }
 
