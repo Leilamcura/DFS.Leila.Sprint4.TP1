@@ -250,6 +250,32 @@ footer {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+.principal-section {
+  width: 40%;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.9); 
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+/* centrar el texto */
+.principal-section h1,
+.principal-section h2,
+.principal-section p {
+  text-align: center;
+}
+
+/* Parrafo */
+.principal-section p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+/***P****/
+
 .about-section {
   width: 80%;
   margin: 40px auto;
@@ -316,6 +342,8 @@ footer {
   border-bottom: 1px solid #6c63ff;
 }
 
+
+
 /* 📱 Responsive */
 @media screen and (max-width: 768px) {
   .contact-container {
@@ -349,4 +377,6 @@ footer {
   main {
     margin-top: 35vh;
   }
+  .principal-section {
+  width: 70%; }
 }

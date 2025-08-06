@@ -159,7 +159,7 @@ export async function editarSuperheroeController(req, res) {
         if (superheroe) {
             //  res.send(renderizarSuperheroe(superheroe));
             const superheroes =await obtenerTodosLosSuperheroes();
-            res.render('dashboard', { superheroes }); // renderizado EJS
+            res.render('dashboard', { title: 'Editar Superhéroes', superheroes }); // renderizado EJS
         } else {
             res.status(400).send({ mensaje: "No se pudo editar el superhéroe" });
         }
@@ -180,7 +180,7 @@ export async function eliminarSuperheroePorIdController(req, res) {
     if (superheroe) {
       // res.send(renderizarSuperheroe(superheroe));
       const superheroes =await obtenerTodosLosSuperheroes();
-     res.render('dashboard', { superheroes }); // renderizado EJS
+     res.render('dashboard', { title: 'Eliminar Superhéroe', superheroes }); // renderizado EJS
     } else {
       res
         .status(400)
@@ -247,7 +247,7 @@ export async function eliminarSuperheroePorNombreController(req, res) {
             return res.status(404).send('Superhéroe no encontrado para editar.');
         }
 
-        res.render('editSuperheroe', { superheroe });
+        res.render('editSuperheroe', { title: 'Editar Superhéroes', superheroe });
     } catch (error) {
         console.error('Error en formActualizarHeroeController:', error);
         res.status(500).send('Error interno al cargar el formulario de edición.');
