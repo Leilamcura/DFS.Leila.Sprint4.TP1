@@ -78,5 +78,6 @@ app.use((req, res) => {
 
 // Iniciar servidor
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Servidor corriendo en http://localhost:${PORT}`);
+  console.log(`Servidor escuchado en el puerto ${PORT}`);
+  // console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
