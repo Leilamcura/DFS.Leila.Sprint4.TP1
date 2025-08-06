@@ -1,12 +1,4 @@
-/* body {
-  margin: 0;
-  padding: 0;
-  background-color: #FFF9F0; /* fondo general 
-  font-family: 'Quicksand', sans-serif;
-  color: #333;
-  /* height: 100vh;
-  
-} */
+
 
 body {
   margin: 0;
@@ -45,7 +37,7 @@ h1 {
 }
 
 .card {
-  background-color: #FFE66D; /* amarillo pastel intenso */
+  background-color: #FFE66D; 
   border: 2px solid #FFA552; /* borde naranja vibrante */
   border-radius: 14px;
   padding: 20px;
@@ -333,3 +325,25 @@ footer {
 }
 
 
+
+/* Estilo base para pantallas grandes */
+.main-nav .nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Estilo responsive para móviles */
+@media screen and (max-width: 768px) {
+  .main-nav .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .main-nav .nav-links li a {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+  }
+}
